@@ -38,7 +38,7 @@
         <dependency>
             <groupId>com.my.plugin</groupId>
             <artifactId>plugin-api</artifactId>
-            <version>0.1-SNAPSHOT</version>
+            <version>${project.version}</version>
         </dependency>
         <dependency>
             <groupId>me.smecsia.common</groupId>
