@@ -15,7 +15,7 @@ public class App {
 
     public static void main(String[] args) throws Exception {
         DependencyResolver resolver = new DependencyResolver(new File(System.getProperty("user.home") + "/.m2/repository"));
-        DependencyResolver.ResolveResult result = resolver.resolve("com.my.plugin:plugin-impl:jar:1.0-SNAPSHOT");
+        DependencyResolver.ResolveResult result = resolver.resolve("com.my.plugin:plugin-impl:jar:0.1-SNAPSHOT");
 
         List<URL> artifactUrls = new ArrayList<URL>();
         for (ArtifactResult artRes : result.artifactResults) {
