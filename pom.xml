@@ -12,7 +12,7 @@
 
     <modules>
         <module>plugin-api</module>
-        <module>plugin-impl</module>
+        <module>plugin-sum</module>
         <module>plugin-app</module>
     </modules>
     <properties>
