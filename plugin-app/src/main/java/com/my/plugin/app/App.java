@@ -15,7 +15,7 @@ public class App {
 
     public static void main(String[] args) throws Exception {
         DependencyResolver resolver = new DependencyResolver(new File(System.getProperty("user.home") + "/.m2/repository"));
-        DependencyResolver.ResolveResult result = resolver.resolve("com.my.plugin:plugin-impl:jar:0.1-SNAPSHOT");
+        DependencyResolver.ResolveResult result = resolver.resolve("com.my.plugin:plugin-sum:jar:0.1-SNAPSHOT");
 
         List<URL> artifactUrls = new ArrayList<URL>();
         for (ArtifactResult artRes : result.artifactResults) {
@@ -23,7 +23,7 @@ public class App {
         }
         final URLClassLoader urlClassLoader = new URLClassLoader(artifactUrls.toArray(new URL[artifactUrls.size()]));
 
-        Class<?> clazz = urlClassLoader.loadClass("com.my.plugin.impl.PluginAdapter");
+        Class<?> clazz = urlClassLoader.loadClass("com.my.plugin.SumPlugin");
         final Plugin adapterInstance = classLoaderProxy(urlClassLoader, clazz.newInstance(), Plugin.class);
         System.out.println("Result: " + adapterInstance.perform(2, 3));
     }
